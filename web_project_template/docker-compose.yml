@@ -1,0 +1,18 @@
+version: '3'
+services:
+  pentaho:
+    image: ""
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./pentaho-cdf-dd/:/usr/
+    environment:
+      TIMEZONE: "Europe/Moscow"
+      JAVA_TIMEZONE: "Europe/Moscow"
+    logging:
+      driver: json-file
+      options:
+        max-size: "20m"
+        max-file: "2"
+    privileged: true
+    container_name: рукрукр
